@@ -12,6 +12,7 @@ import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.compone
   styleUrls: ['./posts.component.scss']
 })
 export class PostsComponent implements OnInit {
+  isReadMore = true;
   posts: Post[] = [];
   displayedColumns: string[] = ['title', 'body'];
   color = '';
@@ -21,14 +22,18 @@ export class PostsComponent implements OnInit {
     private dialog: MatDialog,
     private postService: PostService
   ) { }
+  
+  readText():void{
+    this.isReadMore = !this.isReadMore;
+  }
 
   ngOnInit(): void {
 
-    this.postService.getPosts().subscribe(res => {
-      console.log(res);
-      this.posts = res;
-      this.dataSource = this.posts;
-    })
+    // this.postService.getPosts().subscribe(res => {
+    //   console.log(res);
+    //   this.posts = res;
+    //   this.dataSource = this.posts;
+    // })
   }
 
 

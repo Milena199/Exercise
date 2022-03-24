@@ -1,3 +1,17 @@
-table {
-    width: 100%;
+.fullScreen {
+  display: grid;
+  height: auto;
+  background-color: rgba(pink, 0.3);
+  grid-template-columns: auto auto;
+  & mat-card {
+    margin: 16px;
+    & img {
+      width: calc(100% - 32px) !important;
+      margin: 0px 16px 16px 16px !important;
+    }
+    & .text {
+      height: 20px;
+      overflow: hidden;
+    }
   }
+}

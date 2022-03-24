@@ -10,6 +10,16 @@ import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dial
 import { HighlightDirective } from './directives/highlight.directive';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { CommentsComponent } from './components/comments/comments.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -18,6 +28,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     ConfirmDialogComponent,
     HighlightDirective,
     DashboardComponent,
+    CommentsComponent,
+    NavigationComponent,
     
   ],
   imports: [
@@ -25,7 +37,16 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule,
+    RouterModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

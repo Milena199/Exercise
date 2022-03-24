@@ -1,4 +1,79 @@
-<mat-card>
+<div class="fullScreen">
+    <mat-card class="example-card">
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>Easy Frozen Fruit Smoothie</mat-card-title>
+            <mat-card-subtitle>Fruit Smoothie</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image
+            src="https://loseweightbyeating.com/wp-content/uploads/2021/03/AdobeStock_237084715-scaled.jpeg?ezimgfmt=ng:webp/ngcb1">
+        <p [ngClass]="{'text': isReadMore}">
+            You can make a simple frozen strawberry smoothie exciting and new with some of these combinations.
+            If you’ve never made a frozen fruit smoothie before, pick up a bag of berry medley, and either a bag of
+            frozen
+            bananas, or some fresh bananas. You can always peel, slice, and freeze them in small bags.
+        </p>
+        <mat-card-actions>
+            <button mat-icon-button>
+                <mat-icon>favorite_border</mat-icon>
+            </button>
+            <button mat-icon-button>
+                <mat-icon>reply</mat-icon>
+                <button mat-raised-button (click)="readText()">{{ isReadMore ? 'Read More' : 'Read Less'}}</button>
+            </button>
+        </mat-card-actions>
+    </mat-card>
+    <mat-card class="example-card">
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>Low Calorie Acai Bowl Recipe
+            </mat-card-title>
+            <mat-card-subtitle>Fruit Smoothie</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image
+            src="https://loseweightbyeating.com/wp-content/uploads/2020/07/AdobeStock_162365319-600x400.jpeg?ezimgfmt=ng:webp/ngcb1">
+        <p>
+            Use sliced, frozen banana in place of sweetener. It will give the smoothie a boost of sweetness and add
+            creaminess.
+            Berries alone are not that sweet, add in pineapple to sweeten and give a tropical flare.
+            If you want to add greens, try baby spinach. It has practically no flavor.
+        </p>
+        <mat-card-actions>
+            <button mat-icon-button>
+                <mat-icon>favorite_border</mat-icon>
+            </button>
+            <button mat-icon-button>
+                <mat-icon>reply</mat-icon>
+            </button>
+            <!-- <button mat-raised-button (click)="readText()">{{ isReadMore ? 'Read More' : 'Read Less'}}</button> -->
+        </mat-card-actions>
+    </mat-card>  <mat-card class="example-card">
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>Low Calorie Acai Bowl Recipe
+            </mat-card-title>
+            <mat-card-subtitle>Fruit Smoothie</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image
+            src="https://loseweightbyeating.com/wp-content/uploads/2020/07/AdobeStock_162365319-600x400.jpeg?ezimgfmt=ng:webp/ngcb1">
+        <p>
+            Use sliced, frozen banana in place of sweetener. It will give the smoothie a boost of sweetness and add
+            creaminess.
+            Berries alone are not that sweet, add in pineapple to sweeten and give a tropical flare.
+            If you want to add greens, try baby spinach. It has practically no flavor.
+        </p>
+        <mat-card-actions>
+            <button mat-icon-button>
+                <mat-icon>favorite_border</mat-icon>
+            </button>
+            <button mat-icon-button>
+                <mat-icon>reply</mat-icon>
+            </button>
+            <!-- <button mat-raised-button (click)="readText()">{{ isReadMore ? 'Read More' : 'Read Less'}}</button> -->
+        </mat-card-actions>
+    </mat-card>
+</div>
+<!-- <mat-card>
 
 
 
@@ -20,8 +95,4 @@
     </mat-card-content>
 
     <button mat-raised-button color="primary" (click)="showDialog()">open dialog</button>
-</mat-card>
-<!-- <div *ngFor="let post of posts">
-    <h3>{{post.title }}</h3>
-    <p>{{post.body }}</p>
-</div> -->
+</mat-card> -->
