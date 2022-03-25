@@ -1,7 +1,9 @@
-export interface Post {
-    id: number
-    userId?: number
-    title?: string
-    body: string
+export interface CommentsData {
+    data : Comments [];
+}
+export interface Comments {
+    name: string
+    email: string
+    comment?: string
 }
 

@@ -1,8 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { MatTableDataSource } from '@angular/material/table';
-import { Post } from 'src/app/models/models';
 import { PostService } from 'src/app/services/post.service';
 import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
 
@@ -13,10 +10,7 @@ import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.compone
 })
 export class PostsComponent implements OnInit {
   isReadMore = true;
-  posts: Post[] = [];
-  displayedColumns: string[] = ['title', 'body'];
-  color = '';
-  dataSource: any;
+
 
   constructor(
     private dialog: MatDialog,

@@ -1,40 +1,30 @@
-<h1 mat-dialog-title>Are you sure?</h1>
+<h1 mat-dialog-title>Leave a Comment</h1>
+<p>Your email address will not be published. Required fields are marked *</p>
 <div mat-dialog-content>
-    <!-- <p>What's your favorite animal?</p> -->
-    <!-- <mat-form-field appearance="fill">
-    <mat-label>Favorite Animal</mat-label>
-    <input matInput [(ngModel)]="data.animal">
-
-
-</mat-form-field> -->
-
-    <form>
+    <form [formGroup]="form">
+        <mat-label>Name</mat-label>
         <mat-form-field appearance="outline">
-            <input matInput type="text" name="" id="">
+            <input matInput type="name" formControlName="name" id="">
         </mat-form-field>
 
+        <mat-label>Email</mat-label>
         <mat-form-field appearance="outline">
-            <input matInput cdkFocusInitial type="text" name="" id="">
+            <input matInput type="email" formControlName="email" id="">
         </mat-form-field>
 
+        <mat-label>Comment</mat-label>
         <mat-form-field appearance="outline">
-            <input matInput type="text" name="" id="">
-        </mat-form-field>
-
-        <mat-form-field appearance="outline">
-            <input matInput type="text" name="" id="">
-        </mat-form-field>
-
-        <mat-form-field appearance="outline">
-            <input matInput type="text" name="" id="">
+            <textarea matInput type="text" formControlName="comment" id=""></textarea>
         </mat-form-field>
 
         <div mat-dialog-actions>
             <button mat-button type="button" matDialogClose="">No Thanks</button>
-            <button mat-button type="submit" [matDialogClose]="true">Ok</button>
+            <button mat-raised-button color="primary" type="submit" (click)="onSubmit()">Ok</button>
         </div>
-
+        <ul *ngFor="let item of commentsData">
+            <li>{{item.name}}</li>
+            <li>{{item.email}}</li>
+            <li>{{item.comment}}</li>
+        </ul>
     </form>
-
-
 </div>
