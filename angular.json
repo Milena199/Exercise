@@ -76,7 +76,8 @@
               "browserTarget": "vezba:build:production"
             },
             "development": {
-              "browserTarget": "vezba:build:development"
+              "browserTarget": "vezba:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"

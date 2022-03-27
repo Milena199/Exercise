@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Comments } from 'src/app/models/models';
+import { PostService } from 'src/app/services/post.service';
 
 @Component({
   selector: 'app-comments',
@@ -6,10 +9,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./comments.component.scss']
 })
 export class CommentsComponent implements OnInit {
-
-  constructor() { }
+  comments: Comments[] = [];
+  id!: number;
+  // commentId: number = this.activatedRoute.snapshot.params?.id;
+  constructor(
+    private postService: PostService,
+    private activatedRoute: ActivatedRoute,
+  ) { }
 
   ngOnInit(): void {
+    this.postService.getComments().subscribe(res => {
+      this.comments = res;
+    })
   }
 
+  deleteCom(id:number): void {
+    this.postService.delete(id).subscribe(res => {
+      this.comments = this.comments.filter(item => item.id !== id)
+
+    })
+  }
 }

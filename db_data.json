@@ -1,0 +1,37 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Easy Frozen Fruit Smoothie",
+      "body": "You can make a simple frozen strawberry smoothie exciting and new with some of these combinations. If you’ve never made a frozen fruit smoothie before, pick up a bag of berry medley, and either a bag of frozen bananas, or some fresh bananas. You can always peel, slice, and freeze them in small bags.",
+      "imgSrc": "https://loseweightbyeating.com/wp-content/uploads/2021/03/AdobeStock_237084715-scaled.jpeg?ezimgfmt=ng:webp/ngcb1"
+    },
+    {
+      "id": 2,
+      "title": "Low Calorie Acai Bowl Recipe",
+      "body": "Use sliced, frozen banana in place of sweetener. It will give the smoothie a boost of sweetness and add creaminess. Berries alone are not that sweet, add in pineapple to sweeten and give a tropical flare. If you want to add greens, try baby spinach. It has practically no flavor.",
+      "imgSrc": "https://loseweightbyeating.com/wp-content/uploads/2020/07/AdobeStock_162365319-600x400.jpeg?ezimgfmt=ng:webp/ngcb1"
+    },
+    {
+      "id": 3,
+      "title": "Low Calorie Acai Bowl Recipe",
+      "body": "Use sliced, frozen banana in place of sweetener. It will give the smoothie a boost of sweetness and add creaminess. Berries alone are not that sweet, add in pineapple to sweeten and give a tropical flare. If you want to add greens, try baby spinach. It has practically no flavor.",
+      "imgSrc": "https://loseweightbyeating.com/wp-content/uploads/2020/07/AdobeStock_162365319-600x400.jpeg?ezimgfmt=ng:webp/ngcb1"
+    },
+    {
+      "title": "ksjfek",
+      "body": "sfffsfsscf",
+      "imgSrc": "",
+      "id": 4
+    }
+  ],
+  "comments": [
+    {
+      "name": "hbjbj",
+      "email": "njnj@",
+      "comment": "kejfnekf",
+      "id": 3,
+      "postId": 1
+    }
+  ]
+}

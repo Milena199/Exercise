@@ -1,98 +1,23 @@
 <div class="fullScreen">
-    <mat-card class="example-card">
+    <mat-card *ngFor="let post of posts" class="example-card">
         <mat-card-header>
             <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title>Easy Frozen Fruit Smoothie</mat-card-title>
+            <mat-card-title>{{post.title}}</mat-card-title>
             <mat-card-subtitle>Fruit Smoothie</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image
-            src="https://loseweightbyeating.com/wp-content/uploads/2021/03/AdobeStock_237084715-scaled.jpeg?ezimgfmt=ng:webp/ngcb1">
-        <p [ngClass]="{'text': isReadMore}">
-            You can make a simple frozen strawberry smoothie exciting and new with some of these combinations.
-            If you’ve never made a frozen fruit smoothie before, pick up a bag of berry medley, and either a bag of
-            frozen
-            bananas, or some fresh bananas. You can always peel, slice, and freeze them in small bags.
+        <img mat-card-image [src]="post.imgSrc">
+        <p [ngClass]="{'text':!post.isReadMore}">
+            {{post.body}}
         </p>
         <mat-card-actions>
-            <button mat-icon-button>
+            <button mat-icon-button matTooltip="Tried this recipe?">
                 <mat-icon>favorite_border</mat-icon>
             </button>
-            <button mat-icon-button (click)="showDialog()">
+            <button mat-icon-button (click)="showDialog()" matTooltip="Reply">
                 <mat-icon>reply</mat-icon>
             </button>
-            <button mat-raised-button (click)="readText()">{{ isReadMore ? 'Read More' : 'Read Less'}}</button>
+            <button mat-raised-button (click)="post.isReadMore = !post.isReadMore">{{ !post.isReadMore ? 'Read More' : 'Read Less'}}</button>
         </mat-card-actions>
     </mat-card>
-    <mat-card class="example-card">
-        <mat-card-header>
-            <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title>Low Calorie Acai Bowl Recipe
-            </mat-card-title>
-            <mat-card-subtitle>Fruit Smoothie</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image
-            src="https://loseweightbyeating.com/wp-content/uploads/2020/07/AdobeStock_162365319-600x400.jpeg?ezimgfmt=ng:webp/ngcb1">
-        <p>
-            Use sliced, frozen banana in place of sweetener. It will give the smoothie a boost of sweetness and add
-            creaminess.
-            Berries alone are not that sweet, add in pineapple to sweeten and give a tropical flare.
-            If you want to add greens, try baby spinach. It has practically no flavor.
-        </p>
-        <mat-card-actions>
-            <button mat-icon-button>
-                <mat-icon>favorite_border</mat-icon>
-            </button>
-            <button mat-icon-button>
-                <mat-icon>reply</mat-icon>
-            </button>
-            <!-- <button mat-raised-button (click)="readText()">{{ isReadMore ? 'Read More' : 'Read Less'}}</button> -->
-        </mat-card-actions>
-    </mat-card>  <mat-card class="example-card">
-        <mat-card-header>
-            <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title>Low Calorie Acai Bowl Recipe
-            </mat-card-title>
-            <mat-card-subtitle>Fruit Smoothie</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image
-            src="https://loseweightbyeating.com/wp-content/uploads/2020/07/AdobeStock_162365319-600x400.jpeg?ezimgfmt=ng:webp/ngcb1">
-        <p>
-            Use sliced, frozen banana in place of sweetener. It will give the smoothie a boost of sweetness and add
-            creaminess.
-            Berries alone are not that sweet, add in pineapple to sweeten and give a tropical flare.
-            If you want to add greens, try baby spinach. It has practically no flavor.
-        </p>
-        <mat-card-actions>
-            <button mat-icon-button>
-                <mat-icon>favorite_border</mat-icon>
-            </button>
-            <button mat-icon-button>
-                <mat-icon>reply</mat-icon>
-            </button>
-            <!-- <button mat-raised-button (click)="readText()">{{ isReadMore ? 'Read More' : 'Read Less'}}</button> -->
-        </mat-card-actions>
-    </mat-card>
+
 </div>
-<!-- <mat-card>
-
-
-
-    <mat-card-content>
-        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-            <ng-container matColumnDef="title">
-                <th mat-header-cell *matHeaderCellDef>Title</th>
-                <td mat-cell *matCellDef="let element">{{element.title}}</td>
-            </ng-container>
-
-            <ng-container matColumnDef="body">
-                <th mat-header-cell *matHeaderCellDef>Body</th>
-                <td mat-cell *matCellDef="let element">{{element.body}}</td>
-            </ng-container>
-
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-        </table>
-    </mat-card-content>
-
-    <button mat-raised-button color="primary" (click)="showDialog()">open dialog</button>
-</mat-card> -->

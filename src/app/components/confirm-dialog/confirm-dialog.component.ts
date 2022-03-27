@@ -1,7 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormControlName, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Comments} from 'src/app/models/models';
+import { Comments } from 'src/app/models/models';
+import { PostService } from 'src/app/services/post.service';
 
 @Component({
   selector: 'app-confirm-dialog',
@@ -12,21 +13,29 @@ export class ConfirmDialogComponent implements OnInit {
   commentsData: Comments[] = [];
   form: FormGroup = this.fb.group({
     name: ['', Validators.required],
-    email: ['', Validators.email],
-    comment: ['']
+    email: ['', Validators.required],
+    comment: [''],
+
+    // comment: ['']
   });
 
   constructor(
+    private postService: PostService,
     private fb: FormBuilder,
     public dialogRef: MatDialogRef<ConfirmDialogComponent>,
   ) { }
 
   onSubmit(): void {
-      this.commentsData.push(this.form.value);
+    this.postService.createComment(this.form.value).subscribe(res=>{
+      console.log(res);
+      this.dialogRef.close(true);
+      
+    })
+    // this.commentsData.push(this.form.value);
   }
 
   ngOnInit(): void {
-    console.log(this.commentsData);
+    // console.log(this.commentsData);
   }
 
   // onNoClick(): void {
