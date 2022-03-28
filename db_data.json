@@ -2,36 +2,41 @@
   "posts": [
     {
       "id": 1,
-      "title": "Easy Frozen Fruit Smoothie",
-      "body": "You can make a simple frozen strawberry smoothie exciting and new with some of these combinations. If you’ve never made a frozen fruit smoothie before, pick up a bag of berry medley, and either a bag of frozen bananas, or some fresh bananas. You can always peel, slice, and freeze them in small bags.",
-      "imgSrc": "https://loseweightbyeating.com/wp-content/uploads/2021/03/AdobeStock_237084715-scaled.jpeg?ezimgfmt=ng:webp/ngcb1"
+      "title": "Blackberry and vanilla",
+      "body": "This blackberry and vanilla smoothie seems indulgent because it conjures up the flavours of berry pie and ice cream. Blackberries can leave seeds in your drink but if you like your smoothies smooth, you can blend the berries – with juice and water – and strain before following the recipe. ",
+      "imgSrc": "assets/images/blueberry-smoothie.jpg"
     },
     {
       "id": 2,
-      "title": "Low Calorie Acai Bowl Recipe",
-      "body": "Use sliced, frozen banana in place of sweetener. It will give the smoothie a boost of sweetness and add creaminess. Berries alone are not that sweet, add in pineapple to sweeten and give a tropical flare. If you want to add greens, try baby spinach. It has practically no flavor.",
-      "imgSrc": "https://loseweightbyeating.com/wp-content/uploads/2020/07/AdobeStock_162365319-600x400.jpeg?ezimgfmt=ng:webp/ngcb1"
+      "title": "Apple, banana and cinnamon",
+      "body": "For a nourishing smoothie that tastes more like a dessert, chop bananas and blend with sweet red apples, plain yogurt and a sprinkle of cinnamon. If it’s too thick, add a little milk and taste, in case it needs a little more cinnamon.",
+      "imgSrc": "assets/images/banana-smoothie.jpg"
     },
     {
       "id": 3,
-      "title": "Low Calorie Acai Bowl Recipe",
-      "body": "Use sliced, frozen banana in place of sweetener. It will give the smoothie a boost of sweetness and add creaminess. Berries alone are not that sweet, add in pineapple to sweeten and give a tropical flare. If you want to add greens, try baby spinach. It has practically no flavor.",
-      "imgSrc": "https://loseweightbyeating.com/wp-content/uploads/2020/07/AdobeStock_162365319-600x400.jpeg?ezimgfmt=ng:webp/ngcb1"
+      "title": "Beetroot, honey and ginger",
+      "body": "For a much-needed energy and vitamin boost, blend fresh, peeled and chopped beetroot with bananas, some grated ginger and a dollop of honey. Beetroot is a great source of fibre and vitamin C, and ginger has excellent antioxidant properties. You can add crushed ice to thicken it and a splash of fresh blood orange juice for an extra kick.",
+      "imgSrc": "assets/images/berry-smoothie.jpg"
     },
     {
-      "title": "ksjfek",
-      "body": "sfffsfsscf",
-      "imgSrc": "",
-      "id": 4
+      "id": 4,
+      "title": "Avocado, spinach, apple and chia",
+      "body": "Blitz some avocado with a generous handful of spinach, chopped green apple, banana and a splash of coconut water. You can add a touch of honey for extra sweetness and top with crunchy, wholesome chia seeds.",
+      "imgSrc": "assets/images/avocado-smoothie.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Kiwi, mint and lime",
+      "body": "Kiwis are a fantastic source of vitamin C, so blitz two or three together with fresh mint leaves (stalks removed), lime juice, banana, and some water or coconut water for a truly refreshing start to the day. For an even greener glow, throw in a handful of spinach.",
+      "imgSrc": "assets/images/kiwi-smoothie.jpg"
     }
   ],
   "comments": [
     {
-      "name": "hbjbj",
-      "email": "njnj@",
-      "comment": "kejfnekf",
-      "id": 3,
-      "postId": 1
+      "name": "dvsvsd",
+      "email": "vsdvsdvsdv@b",
+      "comment": "bfdbdbfb",
+      "id": 4
     }
   ]
 }

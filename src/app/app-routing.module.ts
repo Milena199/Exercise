@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CommentsComponent } from './components/comments/comments.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { PostsComponent } from './components/posts/posts.component';
+import { RecipeComponent } from './components/posts/recipe/recipe.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'comments',
     component: CommentsComponent
+  },
+  {
+    path: 'recipe/:id',
+    component: RecipeComponent
   },
 ];
 

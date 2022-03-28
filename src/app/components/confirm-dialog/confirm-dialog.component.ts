@@ -31,11 +31,9 @@ export class ConfirmDialogComponent implements OnInit {
       this.dialogRef.close(true);
       
     })
-    // this.commentsData.push(this.form.value);
   }
 
   ngOnInit(): void {
-    // console.log(this.commentsData);
   }
 
   // onNoClick(): void {

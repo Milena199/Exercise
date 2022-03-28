@@ -27,4 +27,7 @@ export class PostService {
   delete(id:number):Observable<any> {
     return this.http.delete('api/comments/'+ id)
   }
+  getPost(id:number):Observable<any> {
+    return this.http.get('/api/posts/'+ id)
+  }
 }

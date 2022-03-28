@@ -5,7 +5,8 @@
             <mat-card-title>{{post.title}}</mat-card-title>
             <mat-card-subtitle>Fruit Smoothie</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image [src]="post.imgSrc">
+        <img mat-card-image [src]="post.imgSrc" [routerLink]="'/recipe/' + post.id" [queryParams]="post">
+
         <p [ngClass]="{'text':!post.isReadMore}">
             {{post.body}}
         </p>
@@ -16,8 +17,8 @@
             <button mat-icon-button (click)="showDialog()" matTooltip="Reply">
                 <mat-icon>reply</mat-icon>
             </button>
-            <button mat-raised-button (click)="post.isReadMore = !post.isReadMore">{{ !post.isReadMore ? 'Read More' : 'Read Less'}}</button>
+            <button mat-raised-button (click)="post.isReadMore = !post.isReadMore">{{ !post.isReadMore ? 'Read More' :
+                'Read Less'}}</button>
         </mat-card-actions>
     </mat-card>
-
 </div>

@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { ActivatedRoute } from '@angular/router';
 import { Post } from 'src/app/models/models';
 import { PostService } from 'src/app/services/post.service';
 import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
@@ -12,9 +13,11 @@ import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.compone
 export class PostsComponent implements OnInit {
   posts: Post[] = [];
 
+  id!: number;
   constructor(
     private dialog: MatDialog,
-    private postService: PostService
+    private postService: PostService,
+    private router: ActivatedRoute
   ) { }
 
 
@@ -25,13 +28,7 @@ export class PostsComponent implements OnInit {
   getPosts(): void {
     this.postService.getPosts().subscribe(res => {
       this.posts = res;
-    },
-      err => { },
-      () => {
-        // console.log("completed");
-
-      })
-
+    })
   }
 
   showDialog(): void {
@@ -40,11 +37,14 @@ export class PostsComponent implements OnInit {
       .afterClosed()
       .subscribe(this.dialogResponseCallback.bind(this))
   }
+  getPost(id: number): void {
+    this.postService.getPost(id).subscribe(res => {
 
+    })
+  }
 
   dialogResponseCallback(res: any) {
     if (!res) return;
-    // console.log(res);
     this.getPosts();
   }
 
