@@ -11,7 +11,6 @@ import { PostService } from 'src/app/services/post.service';
 export class CommentsComponent implements OnInit {
   comments: Comments[] = [];
   id!: number;
-  // commentId: number = this.activatedRoute.snapshot.params?.id;
   constructor(
     private postService: PostService,
     private activatedRoute: ActivatedRoute,

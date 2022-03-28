@@ -1,6 +1,7 @@
 <ul *ngFor="let comment of comments">
     <li>
         {{comment.name}}
+        {{comment.comment}}
     </li>
     <button mat-raised-button (click)="deleteCom(comment.id)">Delete</button>
 </ul>

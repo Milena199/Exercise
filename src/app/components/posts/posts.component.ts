@@ -12,14 +12,15 @@ import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.compone
 })
 export class PostsComponent implements OnInit {
   posts: Post[] = [];
-
-  id!: number;
+  likeCounter = 0;
   constructor(
     private dialog: MatDialog,
     private postService: PostService,
     private router: ActivatedRoute
   ) { }
-
+  numberOfLikes(): void {
+    this.likeCounter++;
+  }
 
   ngOnInit(): void {
     this.getPosts();

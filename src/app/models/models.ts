@@ -8,12 +8,12 @@ export interface Post {
     title: string,
     body: string,
     imgSrc: string
-    // comments?: Comments[],
-    isReadMore?:boolean,
+    likeCounter?:number,
+    isReadMore?: boolean,
 }
 
 export interface Comments {
-    id:number,
+    id: number,
     name: string
     email: string
     comment?: string

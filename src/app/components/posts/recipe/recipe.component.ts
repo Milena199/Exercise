@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Post } from 'src/app/models/models';
 import { PostService } from 'src/app/services/post.service';
 
 @Component({
@@ -9,7 +10,8 @@ import { PostService } from 'src/app/services/post.service';
 })
 export class RecipeComponent implements OnInit {
   postId: number = this.router.snapshot.params['id'];
-
+  post: any;
+  posts: Post[] = [];
   constructor(
     private postService: PostService,
     private router: ActivatedRoute
@@ -17,11 +19,17 @@ export class RecipeComponent implements OnInit {
 
   ngOnInit(): void {
     this.getPost();
-
+    this.getPosts();
   }
   getPost(): void {
     this.postService.getPost(this.postId).subscribe(res => {
-
+      this.post = res;
+      
+    })
+  }
+  getPosts(): void {
+    this.postService.getPosts().subscribe(res => {
+      this.posts = res;
     })
   }
 }

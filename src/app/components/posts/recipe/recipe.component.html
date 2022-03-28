@@ -1,2 +1,25 @@
 <router-outlet></router-outlet>
-<div>recept</div>
+<div class="wrapper">
+    <mat-card >
+        <mat-card-header>
+            <div mat-card-avatar></div>
+            <mat-card-title>{{post.title}}</mat-card-title>
+            <mat-card-subtitle>Fruit Smoothie</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="post.imgSrc">
+
+        <p>
+            {{post.body}}
+
+        </p>
+    </mat-card>
+    <section>
+        <h1>More Recipes</h1>
+        <mat-divider></mat-divider>
+        <mat-card class="mostPopular" *ngFor="let post of posts" [routerLink]="'/recipe/' + post.id" [queryParams]="post">
+            <mat-card-title>{{post.title}}</mat-card-title>
+            <img mat-card-image [src]="post.imgSrc">
+        </mat-card>
+    </section>
+
+</div>
