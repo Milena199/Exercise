@@ -11,8 +11,8 @@
             {{post.body}}
         </p>
         <mat-card-actions>
-            <button mat-icon-button matTooltip="Tried this recipe?" (click)="numberOfLikes(post)">
-                <mat-icon>favorite_border</mat-icon>
+            <button   mat-icon-button matTooltip="Tried this recipe?" (click)="numberOfLikes(post)">
+                <mat-icon backgroundColor color='red' class="likes">favorite_border</mat-icon>
             </button>
             <button mat-icon-button (click)="showDialog()" matTooltip="Reply">
                 <mat-icon>reply</mat-icon>

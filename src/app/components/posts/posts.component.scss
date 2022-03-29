@@ -2,7 +2,7 @@
   display: grid;
   height: auto;
   background-color: rgba(pink, 0.3);
-  grid-template-columns: auto auto;
+  grid-template-columns: auto auto auto;
   & mat-card {
     margin: 16px;
     & img {
@@ -14,8 +14,11 @@
       height: 20px;
       overflow: hidden;
     }
-    button{
+    button {
       cursor: pointer;
+      .likes:visited {
+        background-color: red;
+      }
     }
   }
 }
