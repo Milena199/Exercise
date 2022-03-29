@@ -1,15 +1,15 @@
 <router-outlet></router-outlet>
 <div class="wrapper">
-    <mat-card >
+    <mat-card>
         <mat-card-header>
             <div mat-card-avatar></div>
-            <mat-card-title>{{post.title}}</mat-card-title>
+            <mat-card-title>{{post?.title}}</mat-card-title>
             <mat-card-subtitle>Fruit Smoothie</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image [src]="post.imgSrc">
+        <img mat-card-image [src]="post?.imgSrc">
 
         <p>
-            {{post.body}}
+            {{post?.body}}
 
         </p>
     </mat-card>
