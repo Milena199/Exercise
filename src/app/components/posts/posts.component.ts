@@ -18,8 +18,13 @@ export class PostsComponent implements OnInit {
     private postService: PostService,
     private router: ActivatedRoute
   ) { }
-  numberOfLikes(): void {
-    this.likeCounter++;
+
+  numberOfLikes(post: Post): void {
+    if(!post.likeCounter)
+    {
+      post.likeCounter=0;
+    }
+    post.likeCounter++;
   }
 
   ngOnInit(): void {

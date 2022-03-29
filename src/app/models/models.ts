@@ -8,7 +8,7 @@ export interface Post {
     title: string,
     body: string,
     imgSrc: string
-    likeCounter?:number,
+    likeCounter:number ,
     isReadMore?: boolean,
 }
 
