@@ -13,7 +13,7 @@ export class ConfirmDialogComponent implements OnInit {
   commentsData: Comments[] = [];
   form: FormGroup = this.fb.group({
     name: ['', Validators.required],
-    email: ['', Validators.required],
+    email: ['', Validators.email],
     comment: [''],
 
     // comment: ['']

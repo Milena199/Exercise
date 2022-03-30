@@ -7,7 +7,32 @@
         </mat-card-header>
         <img mat-card-image [src]="post?.imgSrc">
         <p>{{post?.body}}</p>
-        <button mat-raised-button (click)="favourites()">Favourites</button>
+        <mat-divider></mat-divider>
+        <p class="favorite">Add to your favorite?</p>
+        <button mat-icon-button matTooltip="Add to favorite?" (click)="favourites()">
+            <mat-icon backgroundColor color='pink'>favorite</mat-icon>
+        </button>
+        <mat-divider></mat-divider>
+        <form [formGroup]="form">
+            <p>Leave a Comment</p>
+            <mat-label>Name</mat-label>
+            <mat-form-field appearance="outline">
+                <input matInput type="name" formControlName="name" id="">
+            </mat-form-field>
+
+            <mat-label>Email</mat-label>
+            <mat-form-field appearance="outline">
+                <input matInput type="email" formControlName="email" id="">
+            </mat-form-field>
+
+            <mat-label>Comment</mat-label>
+            <mat-form-field appearance="outline">
+                <textarea matInput type="text" formControlName="comment" id=""
+                    placeholder="Leave a comment.."></textarea>
+            </mat-form-field>
+
+            <button mat-raised-button color="primary" type="submit">Post Comment</button>
+        </form>
     </mat-card>
     <section>
         <h1>More Recipes</h1>

@@ -1,5 +1,6 @@
 import { HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { map, tap } from 'rxjs';
 import { Post } from 'src/app/models/models';
@@ -15,7 +16,13 @@ export class RecipeComponent implements OnInit {
   post!: Post;
   data: any;
   posts: Post[] = [];
+  form: FormGroup = this.fb.group({
+    name:['',Validators.required],
+    email:['',Validators.email],
+    comment:['']
+  })
   constructor(
+    private fb:FormBuilder,
     private postService: PostService,
     private route: ActivatedRoute
   ) { }
