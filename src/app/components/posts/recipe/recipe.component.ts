@@ -1,9 +1,7 @@
-import { HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { map, tap } from 'rxjs';
-import { Post } from 'src/app/models/models';
+import { Comments, Post } from 'src/app/models/models';
 import { PostService } from 'src/app/services/post.service';
 
 @Component({
@@ -12,17 +10,19 @@ import { PostService } from 'src/app/services/post.service';
   styleUrls: ['./recipe.component.scss']
 })
 export class RecipeComponent implements OnInit {
+  comments: Comments[] = []
   postId: number = this.route.snapshot.params['id'];
   post!: Post;
   data: any;
   posts: Post[] = [];
+
   form: FormGroup = this.fb.group({
-    name:['',Validators.required],
-    email:['',Validators.email],
-    comment:['']
+    name: ['', Validators.required],
+    email: ['', Validators.email],
+    comment: ['']
   })
   constructor(
-    private fb:FormBuilder,
+    private fb: FormBuilder,
     private postService: PostService,
     private route: ActivatedRoute
   ) { }
@@ -36,7 +36,18 @@ export class RecipeComponent implements OnInit {
       this.getPost();
     });
     this.getPosts();
-
+    this.getComments();
+  }
+  getComments(): void {
+    this.postService.getComments().subscribe(res => {
+      this.comments = res;
+    })
+  }
+  onSubmit(): void {
+    this.postService.createComment(this.form.value).subscribe(res => {
+      this.getComments();
+      this.form?.reset();
+    })
   }
   getPost(): void {
     this.postService.getPost(this.postId).subscribe(res => {

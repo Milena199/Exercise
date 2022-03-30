@@ -31,8 +31,18 @@
                     placeholder="Leave a comment.."></textarea>
             </mat-form-field>
 
-            <button mat-raised-button color="primary" type="submit">Post Comment</button>
+            <button mat-raised-button color="primary" type="submit" (click)="onSubmit()">Post Comment</button>
         </form>
+
+        <div class="postComments" *ngFor="let comment of comments">
+            <ul>
+                <mat-divider></mat-divider>
+                <li><span class="material-icons"> account_circle </span>{{comment.name}}
+                    <p>{{comment.comment}}</p>
+                </li>
+                <mat-divider></mat-divider>
+            </ul>
+        </div>
     </mat-card>
     <section>
         <h1>More Recipes</h1>

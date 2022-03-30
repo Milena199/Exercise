@@ -20,6 +20,19 @@
     & p {
       font-size: large;
     }
+    li{
+      display: grid;
+      grid-template-columns: 30% 70%;
+      grid-template-areas: 'span p';
+      list-style: none;
+      padding: 16px;
+      span{
+        grid-area: span;
+      }
+      p{
+        grid-area: p;
+      }
+    }
   }
   section {
     grid-area: section;
