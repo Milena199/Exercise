@@ -13,16 +13,18 @@ import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.compone
 export class PostsComponent implements OnInit {
   posts: Post[] = [];
   likeCounter = 0;
+  // key: string = 'Name';
+  data!: any;
   constructor(
     private dialog: MatDialog,
     private postService: PostService,
-    private router: ActivatedRoute
-  ) { }
+  ) {
+
+  }
 
   numberOfLikes(post: Post): void {
-    if(!post.likeCounter)
-    {
-      post.likeCounter=0;
+    if (!post.likeCounter) {
+      post.likeCounter = 0;
     }
     post.likeCounter++;
   }
@@ -43,12 +45,6 @@ export class PostsComponent implements OnInit {
       .afterClosed()
       .subscribe(this.dialogResponseCallback.bind(this))
   }
-  getPost(id: number): void {
-    this.postService.getPost(id).subscribe(res => {
-
-    })
-  }
-
   dialogResponseCallback(res: any) {
     if (!res) return;
     this.getPosts();

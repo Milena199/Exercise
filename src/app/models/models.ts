@@ -4,6 +4,7 @@ export interface CommentsData {
 
 
 export interface Post {
+    [x: string]: any;
     id: number,
     title: string,
     body: string,

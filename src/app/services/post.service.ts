@@ -24,10 +24,14 @@ export class PostService {
   getComments(): Observable<any> {
     return this.http.get('api/comments')
   }
-  delete(id:number):Observable<any> {
-    return this.http.delete('api/comments/'+ id)
+  delete(id: number): Observable<any> {
+    return this.http.delete('api/comments/' + id)
   }
-  getPost(id:number):Observable<any> {
-    return this.http.get('/api/posts/'+ id)
+  getPost(id: number): Observable<any> {
+    return this.http.get('/api/posts/' + id)
+  }
+  addFavorites(post: Post) {
+    JSON.stringify(localStorage.setItem('post',JSON.stringify(post)));
+
   }
 }

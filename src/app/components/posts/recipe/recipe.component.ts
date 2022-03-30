@@ -13,21 +13,23 @@ import { PostService } from 'src/app/services/post.service';
 export class RecipeComponent implements OnInit {
   postId: number = this.route.snapshot.params['id'];
   post!: Post;
-  id!: number;
-
-
+  data: any;
   posts: Post[] = [];
   constructor(
     private postService: PostService,
     private route: ActivatedRoute
   ) { }
-
+  favourites(): void {
+    localStorage.setItem('key', JSON.stringify(this.post));
+    this.data = localStorage.getItem('key');
+  }
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.postId = params['id'];
       this.getPost();
     });
     this.getPosts();
+
   }
   getPost(): void {
     this.postService.getPost(this.postId).subscribe(res => {
