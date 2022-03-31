@@ -21,6 +21,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { RecipeComponent } from './components/posts/recipe/recipe.component';
+import { BorderRadiusDirective } from './directives/border-radius.directive';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { RecipeComponent } from './components/posts/recipe/recipe.component';
     CommentsComponent,
     NavigationComponent,
     RecipeComponent,
+    BorderRadiusDirective,
     
   ],
   imports: [

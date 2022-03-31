@@ -10,7 +10,7 @@
       width: calc(100% - 8px) !important;
       margin: 8px 8px;
     }
-    & .favorite{
+    & .favorite {
       display: inline-flex;
     }
     form {
@@ -20,16 +20,16 @@
     & p {
       font-size: large;
     }
-    li{
+    li {
       display: grid;
       grid-template-columns: 30% 70%;
-      grid-template-areas: 'span p';
+      grid-template-areas: "span p";
       list-style: none;
       padding: 16px;
-      span{
+      span {
         grid-area: span;
       }
-      p{
+      p {
         grid-area: p;
       }
     }
