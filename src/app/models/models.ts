@@ -1,10 +1,10 @@
 export interface CommentsData {
+    id: number;
     data: Comments[];
 }
 
 
 export interface Post {
-    [x: string]: any;
     id: number,
     title: string,
     body: string,

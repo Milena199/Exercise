@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { Post } from '../models/models';
+import { Comments, Post } from '../models/models';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +22,6 @@ export class PostService {
     return this.http.post('api/comments', comment)
   }
   getComments(postId: number): Observable<any> {
-
     const params = new HttpParams().set('postId', postId)
     return this.http.get('api/comments', { params })
   }
@@ -32,8 +31,5 @@ export class PostService {
   getPost(id: number): Observable<any> {
     return this.http.get('/api/posts/' + id)
   }
-  addFavorites(post: Post) {
-    JSON.stringify(localStorage.setItem('post', JSON.stringify(post)));
-
-  }
+ 
 }

@@ -22,10 +22,5 @@ export class CommentsComponent implements OnInit {
  
   }
 
-  deleteCom(id: number): void {
-    this.postService.delete(id).subscribe(res => {
-      this.comments = this.comments.filter(item => item.id !== id)
-
-    })
-  }
+ 
 }

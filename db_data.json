@@ -33,67 +33,25 @@
   ],
   "comments": [
     {
-      "name": "test",
-      "email": "sfef@123",
-      "comment": "sfefdfffdfdfdfdefe",
-      "id": 16
-    },
-    {
-      "name": "Milena",
-      "email": "sdwa@fdsfdsssfwsfes",
-      "comment": "I liked this recipe :)",
-      "id": 17
-    },
-    {
-      "name": "Milena",
-      "email": "sdwa@fdsfdsssfwsfes",
-      "comment": "I liked this recipe :)",
-      "id": 18
-    },
-    {
-      "name": "test",
-      "email": "skjhfske@kjhfskjfs",
-      "comment": "Taste this recipe :D",
-      "id": 19
-    },
-    {
-      "name": "mario",
-      "email": "mario@jndkjf",
-      "comment": "probaj recept",
-      "id": 23
-    },
-    {
-      "name": "Jelena",
-      "email": "slkfjso@kjgreg",
-      "comment": "mn ubav recept",
-      "id": 24
-    },
-    {
-      "name": "zoran",
-      "email": "ksfej@knefkg",
-      "comment": "ne e ubav recept",
-      "id": 25
-    },
-    {
-      "postId": "4",
-      "name": "kodsa",
-      "email": "dsa@dsa",
-      "comment": "dsadas",
-      "id": 26
+      "postId": "2",
+      "name": "post",
+      "email": "",
+      "comment": "",
+      "id": 1
     },
     {
       "postId": "1",
-      "name": "mario",
-      "email": "gchg@gjhj",
-      "comment": "nooooo",
-      "id": 27
+      "name": "Milena",
+      "email": "hvjhvj@bfbgf",
+      "comment": "jhbyuyguhjj",
+      "id": 2
     },
     {
-      "postId": "2",
-      "name": "milenaa",
-      "email": "dmaad@sad",
-      "comment": "milne",
-      "id": 28
+      "postId": null,
+      "name": "posteeeeeeee5",
+      "email": "ldkfgjlk@LKnlknl",
+      "comment": "lnnlnlfv",
+      "id": 3
     }
   ]
 }
