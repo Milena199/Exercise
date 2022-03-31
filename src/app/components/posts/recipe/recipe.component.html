@@ -2,15 +2,15 @@
 <div class="wrapper">
     <mat-card>
         <mat-card-header>
-            <mat-card-title>{{post?.title}}</mat-card-title>
+            <mat-card-title>{{postData?.title}}</mat-card-title>
             <mat-card-subtitle>Fruit Smoothie</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image [src]="post?.imgSrc">
-        <p>{{post?.body}}</p>
+        <img mat-card-image [src]="postData?.imgSrc">
+        <p>{{postData?.body}}</p>
         <mat-divider></mat-divider>
         <p class="favorite">Add to your favorite?</p>
         <button mat-icon-button matTooltip="Add to favorite?" (click)="favourites()">
-            <mat-icon backgroundColor color='pink'>favorite</mat-icon>
+            <mat-icon [ngClass]="{'favorite-icon': currentFavIndex != -1}">favorite</mat-icon>
         </button>
         <mat-divider></mat-divider>
         <form [formGroup]="form">
@@ -31,10 +31,11 @@
                     placeholder="Leave a comment.."></textarea>
             </mat-form-field>
 
-            <button mat-raised-button color="accent" type="submit" (click)="onSubmit()">Post Comment</button>
+            <button mat-raised-button color="accent" type="submit" (click)="onSubmit()" cdkTrapFocus>Post
+                Comment</button>
         </form>
 
-        <div class="postComments" *ngFor="let comment of comments">
+        <section class="postComments" *ngFor="let comment of comments">
             <ul>
                 <mat-divider></mat-divider>
                 <li><span class="material-icons"> account_circle </span>{{comment.name}}
@@ -42,13 +43,13 @@
                 </li>
                 <mat-divider></mat-divider>
             </ul>
-        </div>
+        </section>
     </mat-card>
     <section>
         <h1>More Recipes</h1>
         <mat-divider></mat-divider>
         <mat-card class="mostPopular" appBorderRadius color="pink" borderStyle="solid" *ngFor="let post of posts"
-            [routerLink]="'/recipe/' + post.id" [queryParams]="post">
+            [routerLink]="'/recipe/' + post.id">
             <mat-card-title>{{post.title}}</mat-card-title>
             <img mat-card-image [src]="post.imgSrc">
         </mat-card>

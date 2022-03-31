@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Post } from '../models/models';
@@ -21,8 +21,10 @@ export class PostService {
   createComment(comment: Comment): Observable<any> {
     return this.http.post('api/comments', comment)
   }
-  getComments(): Observable<any> {
-    return this.http.get('api/comments')
+  getComments(postId: number): Observable<any> {
+
+    const params = new HttpParams().set('postId', postId)
+    return this.http.get('api/comments', { params })
   }
   delete(id: number): Observable<any> {
     return this.http.delete('api/comments/' + id)
@@ -31,7 +33,7 @@ export class PostService {
     return this.http.get('/api/posts/' + id)
   }
   addFavorites(post: Post) {
-    JSON.stringify(localStorage.setItem('post',JSON.stringify(post)));
+    JSON.stringify(localStorage.setItem('post', JSON.stringify(post)));
 
   }
 }

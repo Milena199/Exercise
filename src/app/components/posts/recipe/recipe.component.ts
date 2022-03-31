@@ -12,11 +12,23 @@ import { PostService } from 'src/app/services/post.service';
 export class RecipeComponent implements OnInit {
   comments: Comments[] = []
   postId: number = this.route.snapshot.params['id'];
-  post!: Post;
-  data: any;
+
   posts: Post[] = [];
 
+  postData: Post = {
+    id: this.postId,
+    title: '',
+    body: '',
+    imgSrc: '',
+    likeCounter: 0
+  };
+
+  allFavourites: Post[] = JSON.parse(localStorage.getItem('favourites') || '[]');
+  currentFavIndex = this.allFavourites.findIndex(el => el.id == this.postData.id);
+
+
   form: FormGroup = this.fb.group({
+    postId: [this.postId],
     name: ['', Validators.required],
     email: ['', Validators.email],
     comment: ['']
@@ -26,11 +38,29 @@ export class RecipeComponent implements OnInit {
     private postService: PostService,
     private route: ActivatedRoute
   ) { }
+
+
   favourites(): void {
-    localStorage.setItem('key', JSON.stringify(this.post));
-    this.data = localStorage.getItem('key');
+    this.allFavourites = JSON.parse(localStorage.getItem('favourites') || '[]');
+    this.currentFavIndex = this.allFavourites.findIndex(el => el.id == this.postData.id);
+
+    if (this.allFavourites.length === 0 || this.currentFavIndex == -1) {
+      this.allFavourites.push(this.postData)
+    }
+    else {
+      this.allFavourites.splice(this.currentFavIndex, 1);
+    }
+
+    localStorage.setItem('favourites', JSON.stringify(this.allFavourites))
+    this.currentFavIndex = this.allFavourites.findIndex(el => el.id == this.postData.id);
+
   }
+
+
+
   ngOnInit(): void {
+    console.log(this.allFavourites, this.currentFavIndex);
+
     this.route.params.subscribe(params => {
       this.postId = params['id'];
       this.getPost();
@@ -39,7 +69,7 @@ export class RecipeComponent implements OnInit {
     this.getComments();
   }
   getComments(): void {
-    this.postService.getComments().subscribe(res => {
+    this.postService.getComments(this.postId).subscribe(res => {
       this.comments = res;
     })
   }
@@ -51,7 +81,8 @@ export class RecipeComponent implements OnInit {
   }
   getPost(): void {
     this.postService.getPost(this.postId).subscribe(res => {
-      this.post = res;
+      this.postData = res;
+      this.currentFavIndex = this.allFavourites.findIndex(el => el.id === this.postData.id);
     })
   }
   getPosts(): void {

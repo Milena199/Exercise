@@ -5,13 +5,13 @@
             <mat-card-title>{{post.title}}</mat-card-title>
             <mat-card-subtitle>Fruit Smoothie</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image [src]="post.imgSrc" [routerLink]="'/recipe/' + post.id" [queryParams]="post">
+        <img mat-card-image [src]="post.imgSrc" [routerLink]="'/recipe/' + post.id">
 
         <p [ngClass]="{'text':!post.isReadMore}">
             {{post.body}}
         </p>
         <mat-card-actions>
-            <button   mat-icon-button matTooltip="Tried this recipe?" (click)="numberOfLikes(post)">
+            <button mat-icon-button matTooltip="Tried this recipe?" (click)="numberOfLikes(post)">
                 <mat-icon backgroundColor color='red' class="likes">favorite_border</mat-icon>
             </button>
             <button mat-icon-button (click)="showDialog()" matTooltip="Reply">
@@ -19,7 +19,7 @@
             </button>{{post.likeCounter}}
             <button mat-raised-button (click)="post.isReadMore = !post.isReadMore">{{ !post.isReadMore ? 'Read More' :
                 'Read Less'}}</button>
-                <!-- <button (click)="favourites()">Favourites</button> -->
+            <!-- <button (click)="favourites()">Favourites</button> -->
         </mat-card-actions>
     </mat-card>
 </div>
