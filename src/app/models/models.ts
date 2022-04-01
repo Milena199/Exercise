@@ -15,8 +15,9 @@ export interface Post {
 
 export interface Comments {
     id: number,
-    name: string
-    email: string
-    comment?: string
+    name: string,
+    email: string,
+    comment?: string,
+    postId:number,
 }
 

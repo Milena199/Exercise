@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵɵqueryRefresh } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Comments, CommentsData, Post } from 'src/app/models/models';
 import { PostService } from 'src/app/services/post.service';
-
 @Component({
   selector: 'app-recipe',
   templateUrl: './recipe.component.html',
@@ -12,7 +11,6 @@ import { PostService } from 'src/app/services/post.service';
 export class RecipeComponent implements OnInit {
   comments: Comments[] = [];
   postId: number = this.route.snapshot.params['id'];
-
   posts: Post[] = [];
 
   postData: Post = {
@@ -22,23 +20,29 @@ export class RecipeComponent implements OnInit {
     imgSrc: '',
     likeCounter: 0
   };
-
+  form: FormGroup = this.fb.group({
+    name: ['', Validators.required],
+    email: ['', Validators.email],
+    comment: [''],
+    
+  })
   allFavourites: Post[] = JSON.parse(localStorage.getItem('favourites') || '[]');
   currentFavIndex = this.allFavourites.findIndex(el => el.id == this.postData.id);
 
-
-  form: FormGroup = this.fb.group({
-    postId: [this.postId],
-    name: ['', Validators.required],
-    email: ['', Validators.email],
-    comment: ['']
-  })
   constructor(
     private fb: FormBuilder,
     private postService: PostService,
     private route: ActivatedRoute
   ) { }
+  ngOnInit(): void {
 
+    this.route.params.subscribe(params => {
+      this.postId = params['id'];
+      this.getPost();
+    });
+    this.getPosts();
+    
+  }
 
   favourites(): void {
     this.allFavourites = JSON.parse(localStorage.getItem('favourites') || '[]');
@@ -54,15 +58,11 @@ export class RecipeComponent implements OnInit {
     localStorage.setItem('favourites', JSON.stringify(this.allFavourites))
     this.currentFavIndex = this.allFavourites.findIndex(el => el.id == this.postData.id);
   }
-  ngOnInit(): void {
-
-    this.route.params.subscribe(params => {
-      this.postId = params['id'];
-      this.getPost();
+  createCom(): void {
+    this.postService.createComment({ postId: this.postId, ...this.form.value }).subscribe(res => {
       this.getComments();
-
-    });
-    this.getPosts();
+      this.form.reset();
+    })
   }
   getComments(): void {
     this.postService.getComments(this.postId).subscribe(res => {
@@ -72,25 +72,19 @@ export class RecipeComponent implements OnInit {
   deleteCom(comment: Comments): void {
     this.postService.delete(comment.id as number).subscribe(res => {
       this.getComments();
-        })
-  }
-  onSubmit(): void {
-    this.postService.createComment(this.form.value).subscribe(res => {
-      this.getComments();
-      this.form?.reset();
     })
   }
+
   getPost(): void {
     this.postService.getPost(this.postId).subscribe(res => {
       this.postData = res;
+      this.getComments();
       this.currentFavIndex = this.allFavourites.findIndex(el => el.id === this.postData.id);
-
     })
   }
   getPosts(): void {
     this.postService.getPosts().subscribe(res => {
       this.posts = res;
-
     })
   }
 }

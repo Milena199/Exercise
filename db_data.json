@@ -33,25 +33,46 @@
   ],
   "comments": [
     {
+      "postId": "4",
+      "name": "44",
+      "email": "sfefe@grge",
+      "comment": "4",
+      "id": 4
+    },
+    {
       "postId": "2",
-      "name": "post",
-      "email": "",
-      "comment": "",
-      "id": 1
-    },
-    {
-      "postId": "1",
       "name": "Milena",
-      "email": "hvjhvj@bfbgf",
-      "comment": "jhbyuyguhjj",
-      "id": 2
+      "email": "sfefe@grge",
+      "comment": "guygbi",
+      "id": 5
     },
     {
-      "postId": null,
-      "name": "posteeeeeeee5",
-      "email": "ldkfgjlk@LKnlknl",
-      "comment": "lnnlnlfv",
-      "id": 3
+      "postId": "2",
+      "name": "test",
+      "email": "sfefe@grge",
+      "comment": "78",
+      "id": 6
+    },
+    {
+      "postId": "5",
+      "name": "wdd",
+      "email": "sfefe@grge",
+      "comment": "we",
+      "id": 7
+    },
+    {
+      "postId": "5",
+      "name": "sdsd",
+      "email": "adada2f@t",
+      "comment": "adada",
+      "id": 8
+    },
+    {
+      "prezime": "moe",
+      "name": "assa",
+      "email": "sasa@ff",
+      "comment": "asas",
+      "id": 9
     }
   ]
 }
