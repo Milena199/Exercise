@@ -12,7 +12,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { CommentsComponent } from './components/comments/comments.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -22,6 +21,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { RecipeComponent } from './components/posts/recipe/recipe.component';
 import { BorderRadiusDirective } from './directives/border-radius.directive';
+import { FavoritesComponent } from './components/favorites/favorites.component';
 
 @NgModule({
   declarations: [
@@ -30,10 +30,10 @@ import { BorderRadiusDirective } from './directives/border-radius.directive';
     ConfirmDialogComponent,
     HighlightDirective,
     DashboardComponent,
-    CommentsComponent,
     NavigationComponent,
     RecipeComponent,
     BorderRadiusDirective,
+    FavoritesComponent,
     
   ],
   imports: [

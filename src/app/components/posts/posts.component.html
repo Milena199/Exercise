@@ -12,14 +12,13 @@
         </p>
         <mat-card-actions>
             <button mat-icon-button matTooltip="Tried this recipe?" (click)="numberOfLikes(post)">
-                <mat-icon backgroundColor color='red' class="likes">favorite_border</mat-icon>
+                <mat-icon backgroundColor background='red'>favorite_border</mat-icon>
             </button>
             <button mat-icon-button (click)="showDialog()" matTooltip="Reply">
                 <mat-icon>reply</mat-icon>
             </button>{{post.likeCounter}}
             <button mat-raised-button (click)="post.isReadMore = !post.isReadMore">{{ !post.isReadMore ? 'Read More' :
                 'Read Less'}}</button>
-            <!-- <button (click)="favourites()">Favourites</button> -->
         </mat-card-actions>
     </mat-card>
 </div>

@@ -9,16 +9,16 @@ export class HighlightDirective {
   @Input() background = '';
   // @Input() appHighlight = '';
 
-  @HostListener('mouseenter') onMouseEnter() {
-    this.highlight(this.color, this.background);
-  }
+  // @HostListener('mouseenter') onMouseEnter() {
+  //   this.highlight(this.color, this.background);
+  // }
 
   // @HostListener('mouseleave') onMouseLeave() {
   //   this.highlight('', '');
   // }
-  // @HostListener('onClick') onClick() {
-  //   this.highlight(this.background,'');
-  // }
+  @HostListener('mouseenter') onClick() {
+    this.highlight(this.background,'');
+  }
 
   // @HostListener('mouseenter') onMouseEnter() {
   //   this.highlight(this.appHighlight && 'red');

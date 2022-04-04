@@ -13,7 +13,6 @@ import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.compone
 export class PostsComponent implements OnInit {
   posts: Post[] = [];
   likeCounter = 0;
-  // key: string = 'Name';
   data!: any;
   constructor(
     private dialog: MatDialog,

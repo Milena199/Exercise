@@ -1,0 +1,15 @@
+
+<div class="fullScreen">
+    <mat-card *ngFor="let favorite of allFavourites">
+        <mat-card-header>
+            <mat-card-title>{{favorite.title}}</mat-card-title>
+            <mat-card-subtitle>Fruit Smoothie</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="favorite.imgSrc" [routerLink]="'/favorites/'">
+
+        <p [ngClass]="{'text':!favorite.isReadMore}">
+            {{favorite.body}}
+        </p>
+        <mat-divider></mat-divider>
+    </mat-card>
+</div>

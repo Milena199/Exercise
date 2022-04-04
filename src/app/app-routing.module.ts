@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CommentsComponent } from './components/comments/comments.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { FavoritesComponent } from './components/favorites/favorites.component';
 import { PostsComponent } from './components/posts/posts.component';
 import { RecipeComponent } from './components/posts/recipe/recipe.component';
 
@@ -15,8 +15,8 @@ const routes: Routes = [
     component: PostsComponent
   },
   {
-    path: 'comments',
-    component: CommentsComponent
+    path: 'favorites',
+    component: FavoritesComponent
   },
   {
     path: 'recipe/:id',
