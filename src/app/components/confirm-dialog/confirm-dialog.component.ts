@@ -15,8 +15,6 @@ export class ConfirmDialogComponent implements OnInit {
     name: ['', Validators.required],
     email: ['', Validators.email],
     comment: [''],
-
-    // comment: ['']
   });
 
   constructor(
@@ -35,12 +33,4 @@ export class ConfirmDialogComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  // onNoClick(): void {
-  //   this.dialogRef.close();
-  // }
-
-  // onOKClick():void{
-  //   this.dialogRef.close(true)
-  // }
 }

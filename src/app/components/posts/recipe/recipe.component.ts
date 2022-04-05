@@ -1,4 +1,4 @@
-import { Component, OnInit, ɵɵqueryRefresh } from '@angular/core';
+import { Component, Input, OnInit, ɵɵqueryRefresh } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Comments, CommentsData, Post } from 'src/app/models/models';
@@ -24,7 +24,7 @@ export class RecipeComponent implements OnInit {
     name: ['', Validators.required],
     email: ['', Validators.email],
     comment: [''],
-    
+
   })
   allFavourites: Post[] = JSON.parse(localStorage.getItem('favourites') || '[]');
   currentFavIndex = this.allFavourites.findIndex(el => el.id == this.postData.id);
@@ -41,7 +41,7 @@ export class RecipeComponent implements OnInit {
       this.getPost();
     });
     this.getPosts();
-    
+
   }
 
   favourites(): void {
@@ -69,12 +69,14 @@ export class RecipeComponent implements OnInit {
       this.comments = res;
     })
   }
-  deleteCom(comment: Comments): void {
-    this.postService.delete(comment.id as number).subscribe(res => {
-      this.getComments();
-    })
-  }
+  // deleteCom(comment: Comments): void {
+  //   this.postService.delete(comment.id as number).subscribe(res => {
+  //     this.getComments();
+  //   })
+  // }
 
+
+ 
   getPost(): void {
     this.postService.getPost(this.postId).subscribe(res => {
       this.postData = res;

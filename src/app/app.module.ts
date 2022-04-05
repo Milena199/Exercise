@@ -22,6 +22,7 @@ import { MatListModule } from '@angular/material/list';
 import { RecipeComponent } from './components/posts/recipe/recipe.component';
 import { BorderRadiusDirective } from './directives/border-radius.directive';
 import { FavoritesComponent } from './components/favorites/favorites.component';
+import { CommentsComponent } from './components/posts/recipe/comments/comments.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { FavoritesComponent } from './components/favorites/favorites.component';
     RecipeComponent,
     BorderRadiusDirective,
     FavoritesComponent,
+    CommentsComponent,
     
   ],
   imports: [

@@ -27,15 +27,16 @@
 
             <mat-label>Comment</mat-label>
             <mat-form-field appearance="outline">
-                <textarea matInput type="text" formControlName="comment" id=""
+                <textarea matInput #request type="text" formControlName="comment" id=""
                     placeholder="Leave a comment.."></textarea>
             </mat-form-field>
-
             <button mat-raised-button color="accent" type="submit" (click)="createCom()">Post
                 Comment</button>
         </form>
 
-        <section class="postComments" *ngFor="let comment of comments">
+        <app-comments [comments]="comments" (refresComments)="getComments" ></app-comments>
+
+        <!-- <section class="postComments" *ngFor="let comment of comments">
             <mat-divider></mat-divider>
             <p><span class="material-icons"> account_circle </span>{{comment.name}}</p>
             <p>{{comment.comment}}</p>
@@ -43,7 +44,7 @@
                 <mat-icon>delete</mat-icon>
             </button>
             <mat-divider></mat-divider>
-        </section>
+        </section> -->
     </mat-card>
     <section>
         <h1>More Recipes</h1>

@@ -1,6 +1,5 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ActivatedRoute } from '@angular/router';
 import { Post } from 'src/app/models/models';
 import { PostService } from 'src/app/services/post.service';
 import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';

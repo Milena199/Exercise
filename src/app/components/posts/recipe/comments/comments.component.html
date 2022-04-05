@@ -1,0 +1,10 @@
+<ng-container *ngFor="let comment of comments">
+    <section class="postComments">
+        <p><span class="material-icons"> account_circle </span>{{comment.name}}</p>
+        <p>{{comment.comment}}</p>
+        <button mat-icon-button color="accent" (click)="deleteCom(comment)">
+            <mat-icon>delete</mat-icon>
+        </button>
+    </section>
+    <mat-divider></mat-divider>
+</ng-container>
