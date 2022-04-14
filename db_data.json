@@ -69,13 +69,6 @@
     },
     {
       "postId": "1",
-      "name": "koment2",
-      "email": "dsadas@dsadas",
-      "comment": "dsadasdase1ewdc",
-      "id": 10
-    },
-    {
-      "postId": "1",
       "name": "dasas",
       "email": "",
       "comment": "dsaasd",
@@ -90,10 +83,10 @@
     },
     {
       "postId": "1",
-      "name": "ss",
-      "email": "sssssada@s.com",
-      "comment": "ssssssssss",
-      "id": 13
+      "name": "mario",
+      "email": "mario@gmail.com",
+      "comment": "blablablabla",
+      "id": 14
     }
   ]
 }
