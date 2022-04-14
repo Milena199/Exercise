@@ -25,9 +25,9 @@ export class RecipeComponent implements OnInit {
   currentFavIndex = this.allFavourites.findIndex(el => el.id == this.postData.id);
 
   form: FormGroup = this.fb.group({
-    name: ['', Validators.required],
-    email: ['', Validators.email],
-    comment: [''],
+    name: ['', [Validators.required, Validators.minLength(2)]],
+    email: ['', [Validators.required, Validators.email]],
+    comment: ['', [Validators.required, Validators.minLength(10)]],
   })
 
 

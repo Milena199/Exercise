@@ -14,37 +14,36 @@
         </button>
         <mat-divider></mat-divider>
         <form [formGroup]="form">
-            <p>Leave a Comment</p>
-            <mat-label>Name</mat-label>
+            <h3>Leave a Comment</h3>
             <mat-form-field appearance="outline">
+                <mat-label>Name</mat-label>
                 <input matInput type="name" formControlName="name" id="">
+                <mat-error *ngIf="form.get('name')?.getError('required')" align="end">Name is required</mat-error>
+                <mat-error *ngIf="form.get('name')?.getError('minlength')" align="end">Enter at least 2 characters
+                </mat-error>
             </mat-form-field>
 
-            <mat-label>Email</mat-label>
             <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
                 <input matInput type="email" formControlName="email" id="">
+                <mat-error *ngIf="form.get('email')?.getError('required')" align="end">Email is required</mat-error>
+                <mat-error *ngIf="form.get('email')?.getError('email')" align="end">Invalid email
+                </mat-error>
             </mat-form-field>
 
-            <mat-label>Comment</mat-label>
             <mat-form-field appearance="outline">
+                <mat-label>Comment</mat-label>
                 <textarea matInput #request type="text" formControlName="comment" id=""
                     placeholder="Leave a comment.."></textarea>
+                <mat-error *ngIf="form.get('comment')?.getError('required')" align="end">Comment is required</mat-error>
+                <mat-error *ngIf="form.get('comment')?.getError('minlength')" align="end">Enter at least 10 characters
+                </mat-error>
             </mat-form-field>
-            <button mat-raised-button color="accent" type="submit" (click)="createCom()">Post
+            <button mat-raised-button color="accent" type="submit" [disabled]="form.invalid" (click)="createCom()">Post
                 Comment</button>
         </form>
 
-        <app-comments [comments]="comments" [refreshComments]="getComments" ></app-comments>
-
-        <!-- <section class="postComments" *ngFor="let comment of comments">
-            <mat-divider></mat-divider>
-            <p><span class="material-icons"> account_circle </span>{{comment.name}}</p>
-            <p>{{comment.comment}}</p>
-            <button mat-icon-button color="accent" (click)="deleteCom(comment)">
-                <mat-icon>delete</mat-icon>
-            </button>
-            <mat-divider></mat-divider>
-        </section> -->
+        <app-comments [comments]="comments" [refreshComments]="getComments"></app-comments>
     </mat-card>
     <section>
         <h1>More Recipes</h1>
